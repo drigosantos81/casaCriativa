@@ -1,8 +1,28 @@
 body {
     background: #e5e5e5;
     color: #24282b;
-    /* text-align: center; */
+    font-family: 'Montserrat', sans-serif;
     margin: 0;
+}
+
+.hide {
+    display: none;
+}
+
+a {
+    color: #ff5e84;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+p, .description {
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
 }
 
 #container {
@@ -34,6 +54,10 @@ button {
     color: #ff5e84;
     cursor: pointer;
     outline: none;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+    letter-spacing: 0.2px;
 }
 
 button:hover {
@@ -55,13 +79,41 @@ button.fat:hover {
 
 footer {
     text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    color: #777;
 }
 
-#footer a {
-    text-decoration: none;
-    color: #25282b;
+footer a {
+    opacity: 0.8;
 }
 
-.hide {
-    display: none;
+.idea {
+    display: flex;
+    box-shadow: 0 4px 16px -8px rgba(1, 1, 1, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 16px;
+    margin-bottom: 32px;
+}
+
+.idea img {
+    width: 60px;
+    height: 60px;
+    margin-right: 32px;
+}
+
+.idea h3 {
+    margin: 0;
+}
+
+.idea p {
+    margin: 8px 0;
+    color: #777;
+}
+
+.idea .description {
+    margin: 16px 0;
 }
