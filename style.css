@@ -32,6 +32,28 @@ p, .description {
     letter-spacing: 0.1px;
 }
 
+.button {
+    background: #ff5e84;
+    color: white;
+    height: 40px;
+    width: 150px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 0px 8px 16px rgba(255, 0, 92, 0.16);
+}
+
+.button:hover {
+    text-decoration: none;
+    background-color: #0984e3;
+}
+
+/* PADRÃO */
+
 #container {
     width: 80%;
     max-width: 980px;
@@ -41,7 +63,7 @@ p, .description {
 
 #intro {
     width: 300px;
-    margin-right: 20px;
+    margin-right: 64px;
 }
 
 main {
@@ -70,19 +92,6 @@ button {
 button:hover {
     text-decoration: underline;
     cursor: pointer;
-}
-
-button.fat {
-    background: #ff5e84;
-    color: white;
-    height: 40px;
-    width: 150px;
-    border-radius: 6px;
-    box-shadow: 0px 8px 16px rgba(255, 0, 92, 0.16);
-}
-
-button.fat:hover {
-    text-decoration: none;
 }
 
 footer {
@@ -143,8 +152,12 @@ footer a {
     transition: 400ms;
 }
 
+#modal.addScroll {
+    overflow: auto;
+}
+
 #modal .content {
-    margin-top: 128px;
+    margin-top: 15%;
     color: white;
 }
 
@@ -156,7 +169,7 @@ footer a {
 #modal form {
     width: 80%;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 15%;
     
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -260,29 +273,12 @@ header {
     color: #25282b;
 }
 
+#page-ideas nav li a.button {
+    color: white;
+}
+
 #page-ideas nav li:last-child {
     margin: 0;
-    width: 150px;
-    height: 40px;
-    background-color: #ff5e84;
-    border-radius: 8px;
-    color: white;
-    font-weight: bold;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#page-ideas nav li:last-child:hover {
-    background-color: #0984e3;
-    text-decoration: none;
-}
-
-#page-ideas nav li:last-child a {
-    color: white;
-    font-size: 14px;
-    
 }
 
 section#title {
