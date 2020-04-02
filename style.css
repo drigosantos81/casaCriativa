@@ -1,8 +1,19 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 body {
     background: #e5e5e5;
     color: #24282b;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
+    /* overflow:hidden; */
+}
+
+body.hideScroll {
+    overflow: hidden;
 }
 
 a {
@@ -58,6 +69,7 @@ button {
 
 button:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 button.fat {
@@ -121,8 +133,9 @@ footer a {
     
     position: absolute;
     top: 0;
-    width: 100vw;
-    height: 100vw;
+    bottom: 0;
+    right: 0;
+    left: 0;
     
     display: flex;
     align-items: center;
@@ -266,10 +279,6 @@ header {
     text-decoration: none;
 }
 
-/* #page-ideas nav li:last-child {
-    color: white;
-} */
-
 #page-ideas nav li:last-child a {
     color: white;
     font-size: 14px;
@@ -301,3 +310,6 @@ section#ideas .idea {
     margin: 0;
 }
 
+section#title, section#ideas, footer {
+    margin-top: 64px;
+}
