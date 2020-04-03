@@ -33,6 +33,20 @@ const ideas = [
         description: "Músicas para cantar com a família.",
         url: "https://rocketseat.com.br"
     },
+    {
+        img: "https://image.flaticon.com/icons/svg/2729/2729038.svg",
+        title: "Pintura",
+        category: "Criatividade",
+        description: "Desenhos para as crianças colorir.",
+        url: "https://rocketseat.com.br"
+    },
+    {
+        img: "https://image.flaticon.com/icons/svg/2729/2729048.svg",
+        title: "Recortes",
+        category: "Criatividade",
+        description: "Músicas para cantar com a família.",
+        url: "https://rocketseat.com.br"
+    },
 ]
 // ************************************
 
