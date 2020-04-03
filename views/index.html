@@ -46,47 +46,23 @@
 
             <section id="last-ideias">
 
+                {% for idea in ideas %}
+
                 <div class="idea">
-                    <img src="https://image.flaticon.com/icons/svg/2729/2729007.svg" alt="Imagem de Curso de Programação">
+                    <img src="{{idea.img}}" alt="{{idea.title}}">
 
                     <div class="content">
-                        <h3>Cursos de Programação</h3>
-                        <p>Estudo</p>
+                        <h3>{{idea.title}}</h3>
+                        <p>{{idea.category}}</p>
                         <div class="description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa voluptate minima autem earum iusto sunt, odit quasi reiciendis sequi dolorum saepe quo magnam est sapiente nulla iste illo molestias esse!
+                            {{idea.description}}
                         </div>
-                        <a href="#">Ir para a idéia</a>
+                        <a href="{{idea.url}}" target="_blank">Ir para a idéia</a>
                     </div>
 
                 </div>
 
-                <div class="idea">
-                    <img src="https://image.flaticon.com/icons/svg/2729/2729005.svg" alt="Imagem de Exercício">
-
-                    <div class="content">
-                        <h3>Exercícios</h3>
-                        <p>Saúde</p>
-                        <div class="description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa voluptate minima autem earum iusto sunt, odit quasi reiciendis sequi dolorum saepe quo magnam est sapiente nulla iste illo molestias esse!
-                        </div>
-                        <a href="#">Ir para a idéia</a>
-                    </div>
-
-                </div>
-
-                <div class="idea">
-                    <img src="https://image.flaticon.com/icons/svg/2729/2729027.svg" alt="Imagem de Meditação">
-
-                    <div class="content">
-                        <h3>Meditação</h3>
-                        <p>Mentalidade</p>
-                        <div class="description">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa voluptate minima autem earum iusto sunt, odit quasi reiciendis sequi dolorum saepe quo magnam est sapiente nulla iste illo molestias esse!
-                        </div>
-                        <a href="#">Ir para a idéia</a>
-                    </div>
-
-                </div>
+                {% endfor %}
 
             </section>
 
