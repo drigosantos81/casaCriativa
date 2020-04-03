@@ -6,15 +6,22 @@ const server = express();
 // Configurando arquivos estáticos
 server.use(express.static("public"));
 
+// Configuração do NunJucks
+const nunjucks = require("nunjucks");
+nunjucks.configure("views", {
+    express: server,
+    noCache: true,
+})
+
 // Criada a rota "/"
 // Capturado o pedido do cliente para resposta
 server.get("/", function(req, res) {
-    return res.sendFile(__dirname + "/index.html");
+    return res.render("index.html");
     
 });
 
 server.get("/ideias", function(req, res) {
-    return res.sendFile(__dirname + "/ideias.html");
+    return res.render("ideias.html");
     
 });
 
