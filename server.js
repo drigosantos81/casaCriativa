@@ -62,28 +62,49 @@ nunjucks.configure("views", {
     noCache: true,
 })
 
-// Criada a rota "/"
+// Criação das rotas "/"
 // Capturado o pedido do cliente para resposta
+
+// INDEX
 server.get("/", function(req, res) {
-
-    const reversedIdeas = [...ideas].reverse();
-
-    let lastIdeas = []
-    for (let idea of reversedIdeas) {
-        if (lastIdeas.length < 2) {
-            lastIdeas.push(idea);
+    
+    db.all(`SELECT * FROM ideas`, function(err, rows) {
+        
+        if (err) {
+            console.log(err);
+            return res.send("Erro no Banco de Dados");            
         }
-    }
-    // lastIdeas = lastIdeas.reverse();
-    return res.render("index.html", { ideas: lastIdeas });    
+
+        const reversedIdeas = [...rows].reverse();
+
+        let lastIdeas = []
+        for (let idea of reversedIdeas) {
+            if (lastIdeas.length < 2) {
+                lastIdeas.push(idea);
+            }
+        }
+        
+        return res.render("index.html", { ideas: lastIdeas });   
+
+        console.log(rows);                
+    });
+ 
 });
 
+// IDEIAS
 server.get("/ideias", function(req, res) {
 
-    const reversedIdeas = [...ideas].reverse();
+    db.all(`SELECT * FROM ideas`, function(err, rows) {
 
-    return res.render("ideias.html", { ideas: reversedIdeas });
-    
+        if (err) {
+            console.log(err);
+            return res.send("Erro no Banco de Dados");            
+        }
+        const reversedIdeas = [...rows].reverse();
+
+        return res.render("ideias.html", { ideas: reversedIdeas });
+    })
+
 });
 
 server.listen(3000, function() {
