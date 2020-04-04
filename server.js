@@ -55,6 +55,8 @@ const db = require("./db");
 // Configurando arquivos estáticos
 server.use(express.static("public"));
 
+server.use(express.urlencoded({ extended: true }));
+
 // Configuração do NunJucks
 const nunjucks = require("nunjucks");
 nunjucks.configure("views", {
@@ -83,10 +85,12 @@ server.get("/", function(req, res) {
                 lastIdeas.push(idea);
             }
         }
+
+        // console.log(rows); 
         
         return res.render("index.html", { ideas: lastIdeas });   
 
-        console.log(rows);                
+                       
     });
  
 });
@@ -100,11 +104,42 @@ server.get("/ideias", function(req, res) {
             console.log(err);
             return res.send("Erro no Banco de Dados");            
         }
+
         const reversedIdeas = [...rows].reverse();
 
         return res.render("ideias.html", { ideas: reversedIdeas });
     })
 
+});
+
+server.post("/", function(req, res) {
+       //Inserir dados na tabela
+        const query = `
+            INSERT INTO ideas(
+                image,
+                title,
+                category,
+                description,
+                link
+            ) VALUES (?,?,?,?,?);
+            `
+        const values = [
+                req.body.image,
+                req.body.title,
+                req.body.category,
+                req.body.description,
+                req.body.link,
+            ]
+
+        db.run(query, values, function(err) {
+            if (err) {
+                console.log(err);
+                return res.send("Erro no Banco de Dados");            
+            }
+
+            return res.redirect("/ideias")
+            
+        });
 });
 
 server.listen(3000, function() {
