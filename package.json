@@ -1,7 +1,7 @@
 {
   "name": "workshopdev032020",
   "version": "1.0.0",
-  "description": "",
+  "description": "Projeto - CASA CRIATIVA - NLW #0 (Última versão da Omnistack)",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

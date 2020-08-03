@@ -37,8 +37,6 @@ server.get("/", function(req, res) {
                 lastIdeas.push(idea);
             }
         }
-
-        // console.log(rows); 
         
         return res.render("index.html", { ideas: lastIdeas });   
 
@@ -98,6 +96,5 @@ server.listen(3000, function() {
     console.log("Servidor Rodando!");
     
 });
-
 
 // console.log(__dirname + "/index.html");
